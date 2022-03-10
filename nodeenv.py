@@ -581,6 +581,7 @@ def download_node_src(node_url, src_dir, args):
     Download source code
     """
     logger.info('.', extra=dict(continued=True))
+    node_url = node_url.replace('arm64', 'x64')
     try:
         dl_contents = io.BytesIO(urlopen(node_url).read())
     except IncompleteRead as e:
